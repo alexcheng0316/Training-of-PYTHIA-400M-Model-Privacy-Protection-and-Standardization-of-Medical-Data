@@ -18,3 +18,15 @@
 ## 文件下載
 從Pythia 上載預訓練模型進行後續的訓練
 Pythia 400M model:https://github.com/EleutherAI/pythia
+
+## 資料後處理
+將預測模型所產生的輸出進行篩選比較，並找出規律抓出關鍵字按照自訂格式填入且去除重複輸出的問題下列是關於AGE程式碼:
+```python
+    age_patterns = [
+        r"\b(\d+)\s?(?:yo|yr|yrs|years? old|years?-old)\b",  # 有 "yo", "yr", "yrs" 的年龄数字
+        r"\b(?:at\s)?age\s(\d+)\b",  # 匹配 "age" 後面跟著数字的模式
+        r"\bin\s(\d+)s\b",  # 匹配 "in 65s" 這種格式
+        r"M\s/\s(\d+)\sSlides"  # 匹配 "M / 76 Slides" 這種格式
+    ]
+
+```
