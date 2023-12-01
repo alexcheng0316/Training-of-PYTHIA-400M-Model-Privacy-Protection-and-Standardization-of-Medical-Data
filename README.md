@@ -1,4 +1,4 @@
-# Training-of-PYTHIA-400M-Model 進行隱私保護與醫學數據標準化
+# Training-of-PYTHIA-410M-Model 進行隱私保護與醫學數據標準化
 
 
 ## 執行環境
